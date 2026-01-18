@@ -14,7 +14,6 @@ defmodule Bag do
 
   @bucket_count 32
 
-
   @spec empty() :: t()
   def empty do
     %__MODULE__{size: 0, table: fresh_table()}
@@ -119,7 +118,6 @@ defmodule Bag do
       end)
   end
 
-
   defp fresh_table do
     :erlang.make_tuple(@bucket_count, [])
   end
@@ -163,7 +161,6 @@ defmodule Bag do
       nil -> 0
     end
   end
-
 
   defp fold_table(fun, acc, table, dir) do
     table
